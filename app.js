@@ -162,8 +162,7 @@ function addNewData() {
   var secondNameValue = secondNameSelector.value.trim();
   var emailValue = emailSelector.value;
   if (!(firstNameValue && secondNameValue)) {
-    alert("You cannot save empty names");
-    throw Error;
+    throw new Error("You cannot save empty names");
   }
   var data = {
     id: generateId(),
@@ -216,6 +215,7 @@ function save(e) {
     viewTable();
     saveOnStorage(storageKey, dataArray);
   } catch (e) {
+    alert(e.message);
     throw new Error(e.message);
   }
 }
