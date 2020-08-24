@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <title>Application</title>
+</head>
+
+<body onload="init()">
+    <div class="container">
+        <div id="form-container" class="hidden">
+            <div class="heading">
+                <span id="formTitle" class="fs-16">New Data</span>
+                <span class="backToTable" onclick="viewTable()">Table</span>
+            </div>
+
+            <form id="dataForm" onsubmit="save(event)">
+                <div class="input-container">
+                    <label for="firstName">First Name</label>
+                    <input class="input" type="text" name="firstName" id="firstName" placeholder="Shubham" required>
+                </div>
+                <div class="input-container">
+                    <label for="secondName">Second Name</label>
+                    <input class="input" type="text" name="secondName" id="secondName" placeholder="Singh" required>
+                </div>
+                <div class="input-container">
+                    <label for="email">Email</label>
+                    <input class="input email" type="email" name="email" id="email" placeholder="shubham@gmail.com"
+                        required>
+                </div>
+                <br>
+                <div class="input-container">
+                    <button class="button primary" type="reset">Clear</button>
+                    <button class="button success" type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="table-container">
+            <div class="input-container">
+                <span class="center fs-16">Data Table</span>
+                <button class="button primary" onclick="viewForm()">Add Data</button>
+            </div>
+            <br>
+            <div id="table-head" class="grid-row">
+                <div class="grid-item">No.</div>
+                <div class="grid-item">First Name</div>
+                <div class="grid-item">Second Name</div>
+                <div class="grid-item">Email</div>
+                <div class="grid-item">Action</div>
+            </div>
+            <div id="table-data"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
